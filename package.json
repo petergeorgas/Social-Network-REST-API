@@ -1,0 +1,31 @@
+{
+  "name": "ujournal_api",
+  "version": "1.0.0",
+  "description": "API for uJournal mobile app ",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/petergeorgas/uJournal-API.git"
+  },
+  "author": "Peter Georgas",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/petergeorgas/uJournal-API/issues"
+  },
+  "homepage": "https://github.com/petergeorgas/uJournal-API#readme",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "express-jwt": "^6.1.0",
+    "jsonwebtoken": "^8.5.1",
+    "jwks-rsa": "^2.0.4",
+    "mongodb": "^4.1.0",
+    "mongoose": "^5.13.7",
+    "nodemon": "^2.0.12"
+  }
+}
