@@ -1,20 +1,21 @@
 {
-  "name": "ujournal_api",
+  "name": "socialnetwork_api",
   "version": "1.0.0",
-  "description": "API for uJournal mobile app ",
+  "description": "API for social network demo project",
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
-    "dev": "nodemon app.js"
+    "dev": "nodemon app.js",
+    "test": "mocha app.test.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/petergeorgas/uJournal-API.git"
+    "url": "git+https://github.com/petergeorgas/Social-Network-REST-API.git"
   },
   "author": "Peter Georgas",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/petergeorgas/uJournal-API/issues"
+    "url": "https://github.com/petergeorgas/Social-Network-REST-API/issues"
   },
   "homepage": "https://github.com/petergeorgas/uJournal-API#readme",
   "dependencies": {
@@ -27,5 +28,8 @@
     "mongodb": "^4.1.0",
     "mongoose": "^5.13.7",
     "nodemon": "^2.0.12"
+  },
+  "devDependencies": {
+    "supertest": "^6.1.6"
   }
 }
