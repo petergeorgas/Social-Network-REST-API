@@ -30,7 +30,8 @@ router.post("/login", (request, response) => {
 });
 
 router.post("/register", (request, response) => {
-  const { firstName, lastName, email, dob, pass } = request.body; // Get the body
+  const { firstName, lastName, address, city, state, zipCode, email, pass } =
+    request.body; // Get the body
 
   // Hash the password
   bcrypt.hash(pass, 10, (err, hash) => {
@@ -41,15 +42,20 @@ router.post("/register", (request, response) => {
       const newUser = User({
         firstName: firstName,
         lastName: lastName,
+        address: address,
+        city: city,
+        state: state,
+        zipCode: zipCode,
         email: email,
-        dob: dob,
         pass: hash,
         dateCreated: Date.now(),
       });
       newUser
         .save()
         .then((user) => {
-          response.status(200).json({ user: user, token: generateToken(user) });
+          response
+            .status(200)
+            .json({ success: 1, user: user, token: generateToken(user) });
         })
         .catch((error) => {
           response.status(500).json(error);
