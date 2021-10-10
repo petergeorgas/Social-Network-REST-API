@@ -17,7 +17,19 @@ router.post("/login", (request, response) => {
           if (err) {
             response.status(500).json(err);
           } else if (match) {
-            response.status(200).json({ token: generateToken(user) });
+            let user_entry = {
+              _id: user._id,
+              firstName: user.firstName,
+              lastName: user.lastName,
+              address: user.address,
+              city: user.city,
+              state: user.state,
+              zipCode: user.zipCode,
+              email: user.email,
+            };
+            response
+              .status(200)
+              .json({ user_entry, token: generateToken(user) });
           } else {
             response.status(403).json({ error: "Passwords do not match" });
           }
@@ -66,7 +78,7 @@ router.post("/register", (request, response) => {
 
 // Generate a token
 function generateToken(user) {
-  return jwt.sign({ data: user }, token_secret, { expiresIn: "24h" }); // Sign a certificate using our secret token that expires in 1 day...
+  return jwt.sign({ data: user }, token_secret, { expiresIn: "7d" }); // Sign a certificate using our secret token that expires in 1 day...
 }
 
 module.exports = router;

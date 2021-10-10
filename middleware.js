@@ -8,6 +8,7 @@ exports.verify = (request, response, next) => {
 
   if (!token) {
     response.status(403).json({ error: "Token not provided." });
+    console.log("Token not provided.");
   } else {
     jwt.verify(token, token_secret, (err, val) => {
       if (err) {

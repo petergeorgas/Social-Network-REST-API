@@ -25,6 +25,8 @@ router.post("/posts", (request, response) => {
     });
 });
 
-router.get("/posts/:id", (request, response) => {});
+router.get("/posts", (request, response) => {
+  response.status(200).json({ success: 1 }).send();
+});
 
 module.exports = router;
